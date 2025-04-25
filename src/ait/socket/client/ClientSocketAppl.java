@@ -18,7 +18,9 @@ public class ClientSocketAppl {
             String message = consoleScanner.nextLine();
             while (!"exit".equalsIgnoreCase(message)) {
                 socketWriter.println(message);
+                socketWriter.flush();
                 String response = socketReader.readLine();
+                System.out.println(response);
                 System.out.println("Enter your message, or type exit for quit");
                 message = consoleScanner.nextLine();
             }
